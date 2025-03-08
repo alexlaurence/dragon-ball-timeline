@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dragon-ball-timeline/static/css/main.616ba065.css",
-    "main.js": "/dragon-ball-timeline/static/js/main.2f112138.js",
+    "main.js": "/dragon-ball-timeline/static/js/main.b5904e9d.js",
     "static/js/453.d1eeab7c.chunk.js": "/dragon-ball-timeline/static/js/453.d1eeab7c.chunk.js",
     "index.html": "/dragon-ball-timeline/index.html",
     "main.616ba065.css.map": "/dragon-ball-timeline/static/css/main.616ba065.css.map",
-    "main.2f112138.js.map": "/dragon-ball-timeline/static/js/main.2f112138.js.map",
+    "main.b5904e9d.js.map": "/dragon-ball-timeline/static/js/main.b5904e9d.js.map",
     "453.d1eeab7c.chunk.js.map": "/dragon-ball-timeline/static/js/453.d1eeab7c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.616ba065.css",
-    "static/js/main.2f112138.js"
+    "static/js/main.b5904e9d.js"
   ]
 }
