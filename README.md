@@ -21,7 +21,11 @@ This timeline is categorised into several main sections:
 
 ## How to Use
 
-Navigate through the repository using the provided markdown files (`.md`). Each file corresponds to specific arcs or events within the timeline. For detailed insights into particular events or characters, refer to the respective section.
+Visit the live interactive timeline at Dragon Ball Timeline, which allows you to:
+
+* Scroll or drag to navigate through events chronologically.
+* Zoom in to explore detailed events.
+* View and follow branches in the timeline to explore alternate scenarios and events.
 
 ## Contributing
 
