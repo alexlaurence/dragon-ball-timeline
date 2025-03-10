@@ -90,7 +90,7 @@ const sortedTimelineEvents = [
   { id: "28", label: "Goku's body is taken over by Zamasu from another timeline, thus becoming Goku Black", age: 778, yOverride: 1, column: 3 },
 
   // Zamasu Timeline
-  { id: "23b", label: "Pilaf uses the Dragon Balls to wish for youth, turning himself, Mai and Shu into babies", age: 766, yOverride: 0, column: 6 },
+  { id: "23b", label: "Pilaf uses the Dragon Balls to wish for youth, turning himself, Mai and Shu into babies", age: 766, yOverride: 1, column: 6 },
   { id: "21a", label: "Blue Haired Future Trunks kills Cell", age: 784, yOverride: 2, column: 6 },
   { id: "23a", label: "Future Trunks trains and protects Earth as its sole defender", age: 784, yOverride: 3, column: 6 },
   { id: "22a", label: "Future Trunks kills Future Babidi and Future Dabura, preventing Buu from awakening", age: 795, column: 6 },
@@ -216,6 +216,19 @@ edges.push({
   id: 'e10-39',
   source: '10',
   target: '39',
+  style: { stroke: '#ff9900', strokeWidth: 4 },
+  animated: true,
+  markerEnd: {
+    type: 'arrowclosed',
+    color: '#ff9900'
+  }
+});
+
+// Blue Haired Trunks Born Branch
+edges.push({
+  id: 'e13-23b',
+  source: '13',
+  target: '23b',
   style: { stroke: '#ff9900', strokeWidth: 4 },
   animated: true,
   markerEnd: {
