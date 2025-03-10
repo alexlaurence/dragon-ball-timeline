@@ -1,5 +1,5 @@
 import React from "react";
-import ReactFlow, { MiniMap, Controls, Background } from "reactflow";
+import ReactFlow, { Controls, Background } from "reactflow";
 import "reactflow/dist/style.css";
 import "./App.css";
 
@@ -15,11 +15,10 @@ const sortedTimelineEvents = [
   { id: "0e", label: "Yamoshi becomes the Legendary Super Saiyan", age: -238, column: 1 },
   { id: "0f", label: "On Namek, violent storms ravage the planet, causing a drought. Katas sends his son away on a spaceship but dies before he can follow him. The child is forced to land on the planet Earth.", age: 261, column: 1 },
   { id: "0g", label: "The child of Katas becomes the apprentice of Earth's current Guardian.", age: 431, column: 1 },
-  { id: "0h", label: "The child of Katas is the chosen one and ascends to the throne of Kami after separating himself from the evil in his being. The evil in Kami's being becomes King Piccolo. The King Piccolo wars begin.", age: 431, column: 1 },
+  { id: "0h", label: "The child of Katas is the chosen one and ascends to the throne of Kami after separating himself from the evil in his being. The evil in Kami's being becomes King Piccolo. The King Piccolo wars begin.", age: 431, yOverride: 1, column: 1 },
   { id: "0i", label: "Kami creates the Dragon Balls.", age: 470, column: 1 },
   { id: "0j", label: "The first Saiyans land on Planet Plant (later known as Planet Vegeta) using stolen spaceships after the destruction of their original home, Sadala.", age: 550, column: 1 },
   { id: "0k", label: "The Saiyans are annexed by the galactic overlord King Cold and start conquering planets to sell.", age: 731, column: 1 },
-  { id: "0l", label: "Bardock sends his son Kakarot to the distant planet Earth due to a premonition of his son avenging the Saiyans' death at the hands of Frieza.", age: 737, column: 0 },
 
   // Dragon Ball Timeline
   { id: "1", label: "Frieza destroys Planet Vegeta killing most of the Saiyans including Bardock and Gine, Kakarot is sent to Earth", age: 737, yOverride: 0, column: 1 },
@@ -50,11 +49,14 @@ const sortedTimelineEvents = [
   { id: "21b", label: "Supreme Kai leads Z-Fighters to Babidi's spaceship", age: 774, yOverride: 3, column: 1 },
   { id: "22", label: "Majin Buu is revived, Vegeta sacrifices himself", age: 774, yOverride: 4, column: 1 },
   { id: "23", label: "Goku and Vegeta fuse into Vegito to fight Super Buu", age: 774, yOverride: 5, column: 1 },
-  { id: "24", label: "Kid Buu is destroyed by Goku's Spirit Bomb", age: 774, yOverride: 6, column: 1 },
+  { id: "24", label: "Kid Buu is destroyed by Goku's Spirit Bomb, Uub is born", age: 774, yOverride: 6, column: 1 },
 
-  // Dragob Ball Z Filler Timeline
-  { id: "0ga", label: "Garlic also becomes the Guardian's pupil. He and the Nameless Namekian compete over who will be the next Guardian of Earth", age: 431, column: 0 },
+  // Dragon Ball Z Filler Timeline
+  { id: "0ga", label: "Garlic also becomes the Guardian's pupil. He and the Nameless Namekian compete over who will be the next Guardian of Earth", age: 431, yOverride: 0, column: 0 },
   { id: "0gb", label: "The Tuffle scientist Dr. Lychee creates Hatchiyack, a hatred-amplification device, he intends to use as a weapon to eradicate the Saiyans. Lychee is killed by Great Ape Saiyans and Hatchiyack is launched into space with Lychee's corpse inside.", age: 730, column: 0 },
+
+  // Dragon Ball Z Special Timeline
+  { id: "0l", label: "Bardock sends his son Kakarot to the distant planet Earth due to a premonition of his son avenging the Saiyans' death at the hands of Frieza.", age: 737, column: 0 },
 
   // Dragon Ball Z Movie Timeline
   { id: "0la", label: "On the brink of destruction, the Tuffles use their remaining scientific power to develop a parasitic life-form to one day take revenge on the Saiyans. The Tuffle King inserts his own genes into the cells of this life-form, which is then launched into space", age: 730, column: 0 },
@@ -62,7 +64,7 @@ const sortedTimelineEvents = [
 
   // Dragon Ball Z Alternate Timeline
   { id: "39", label: "Goku returns from Yardrat and defeats Frieza and King Cold", age: 764, column: 4 },
-  { id: "13", label: "Trunks is born, Goku dies from Heart Virus", age: 766, yOverride: 1, column: 4 },
+  { id: "13", label: "Trunks is born, Goku dies from Heart Virus", age: 766, yOverride: 0, column: 4 },
   { id: "15", label: "Android 17 and 18 massacre the Z-Fighters in Future Trunks' timeline", age: 767, column: 4 },
   { id: "16a", label: "Bulma begins building the time machine", age: 780, column: 4 },
   { id: "17a", label: "Future Trunks travels to the past to warn about the Androids", age: 784, yOverride: 0, column: 4 },
@@ -88,7 +90,7 @@ const sortedTimelineEvents = [
   { id: "28", label: "Goku's body is taken over by Zamasu from another timeline, thus becoming Goku Black", age: 778, yOverride: 1, column: 3 },
 
   // Zamasu Timeline
-  { id: "23b", label: "Pilaf uses the Dragon Balls to wish for youth, turning himself, Mai and Shu into babies", age: 766, column: 6 },
+  { id: "23b", label: "Pilaf uses the Dragon Balls to wish for youth, turning himself, Mai and Shu into babies", age: 766, yOverride: 0, column: 6 },
   { id: "21a", label: "Blue Haired Future Trunks kills Cell", age: 784, yOverride: 2, column: 6 },
   { id: "23a", label: "Future Trunks trains and protects Earth as its sole defender", age: 784, yOverride: 3, column: 6 },
   { id: "22a", label: "Future Trunks kills Future Babidi and Future Dabura, preventing Buu from awakening", age: 795, column: 6 },
@@ -123,7 +125,6 @@ const sortedTimelineEvents = [
   { id: "38d", label: "Goku leaves this world with Shenron", age: 790, yOverride: 5, column: 0 }
 ].sort((a, b) => a.age - b.age);
 
-const START_AGE = Math.min(...sortedTimelineEvents.map(event => event.age));
 const MIN_VERTICAL_SPACING = 300;
 
 // Group events by age first
@@ -144,7 +145,7 @@ Object.keys(eventsByAge)
   .forEach(age => {
     // Special case for ancient events
     const baseY = parseInt(age) === -5000000
-      ? 1000  // Start ancient events at y=1000
+      ? 500  // Start ancient events at y=1000
       : (parseInt(age) + 5000000) * Y_INCREMENT / 100;  // Scale down other positions
     
     const newY = Math.max(baseY, lastY + MIN_VERTICAL_SPACING);
